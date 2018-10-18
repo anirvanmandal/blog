@@ -5,11 +5,8 @@ date: '2011-10-24T17:21:00.000+05:30'
 author: Anirvan Mandal
 tags:
 - python
-- windows 7
+- windows-7
 modified_time: '2011-10-24T17:24:13.651+05:30'
-thumbnail: http://1.bp.blogspot.com/-4a8S0XCUmoA/TqVHLWFmXYI/AAAAAAAAABY/C5V5XGczyVE/s72-c/py_compile.png
-blogger_id: tag:blogger.com,1999:blog-878378505151338176.post-8173809731815968585
-blogger_orig_url: https://static-point.blogspot.com/2011/10/python-delete-current-playing-song-from.html
 ---
 
 It's been a long time since I last posted. Most of the time I was busy with exams and placements. Other times I was just lazy.

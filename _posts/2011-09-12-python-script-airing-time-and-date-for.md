@@ -1,20 +1,17 @@
 ---
 layout: post
-title: "[PYTHON] Script - Airing time and Date for a list of TV Shows"
+title: "[Python] Script - Airing time and Date for a list of TV Shows"
 date: '2011-09-12T05:31:00.001+05:30'
 author: Anirvan Mandal
 tags:
 - python
-- windows 7
 modified_time: '2011-10-23T17:32:35.465+05:30'
-thumbnail: http://3.bp.blogspot.com/-SynClBVYiWo/Tm1S7jk03uI/AAAAAAAAABU/mB1CG6UQPdw/s72-c/op.jpg
-blogger_id: tag:blogger.com,1999:blog-878378505151338176.post-106402630912885527
-blogger_orig_url: https://static-point.blogspot.com/2011/09/python-script-airing-time-and-date-for.html
 ---
 
 Making such a script was in the back of my mind for quite some time now. The main problem is that though many sites provide an option of selecting the TV shows you watch and then give the airing times It is usually in CST or GMT. So here is the script that allows you to have a list of TV shows you watch and then gives you information related to the next episode that is to be aired.
 
-    
+
+{% highlight python %}    
     #Python 2.7
     #Author n!ghtf0x
     #email anirvan.mandal@gmail.com
@@ -103,7 +100,7 @@ Making such a script was in the back of my mind for quite some time now. The mai
     except AttributeError:# When no internet connectivity is found --> restart script
       print "\n\n\tCheck Your Internet Connectivity !\n"
     
-    
+{% endhighlight %}
 
 The following code requires you to have [python-tvrage-api 0.3.0](http://pypi.python.org/pypi/python-tvrage/0.3.0) and [pytz](http://pytz.sourceforge.net/) packages to be installed with your python.
 
