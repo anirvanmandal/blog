@@ -1,0 +1,20 @@
+name: Anirvan's blog
+description: An engineer's misadventures
+meta_description: "Blogging about things I work on and find interesting"
+
+markdown: kramdown
+highlighter: pygments
+logo: false
+paginate: 10
+baseurl: /
+domain_name: 'https://blog.anirvanm.com'
+google_analytics: 'UA-XXXXXXXX-X'
+permalink: /:year/:month/:day/:title:output_ext
+plugins: [jekyll-paginate]
+
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+# Details for the RSS feed generator
+url:            'http://blog.anirvanm.com'
+author:         'Anirvan Mandal'

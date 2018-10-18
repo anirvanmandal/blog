@@ -1,0 +1,51 @@
+
+
+
+I was looking for a way to automate my iTerm environment on a per project basis and I happened to stumble upon [termrc](https://github.com/briangonzalez/termrc). It's a really nifty ruby gem that uses a config file to start an iTerm environment.
+
+I split my iTerm window into 4 panes when working on a rails project. 1 server, 1 console, 1 resque worker and 1 console for bash commands.
+This can be programmatically accomplished by using a simple configuration in a Termfile (YAML). 
+
+```bash
+# /your/project/root/Termfile
+
+root:
+  /your/project/root
+
+commands:
+  server: bundle exec rails s
+  console: bundle exec rails c
+  worker: echo "space for worker"
+  bash: echo "Run your git/bundle/bower here"
+
+layout:
+  - [ server , console ]
+  - [ worker , bash ]
+```
+
+You can initialize your work environment using:
+```bash
+termrc start /your/project/root/Termfile
+```
+
+Additionally I added a shell script to perform tasks before starting the iTerm work environment
+
+```bash
+#! /usr/bin/env bash
+ROOT=/your/project/root
+cd $ROOT && G_STATUS="$(git status | grep clean)"
+EXPECTED_G_STATUS='nothing to commit, working directory clean'
+if [ "$G_STATUS"=="$EXPECTED_G_STATUS" ]
+then
+        cd $ROOT && git fetch
+        cd $ROOT && bundle install
+
+        cd $ROOT && bundle exec rake db:migrate
+        cd $ROOT && bundle exec rake db:migrate PRODUCT=recruit
+        cd $ROOT && bundle exec rake bower:update
+fi
+
+termrc start ~/Termfile
+```
+The final environment looks like this
+![Console](/content/images/2015/12/Screen-Shot-2015-12-01-at-5-54-37-PM-1.png)
