@@ -8,7 +8,7 @@ logo: false
 paginate: 10
 baseurl: /
 domain_name: 'https://blog.anirvanm.com'
-google_analytics: 'UA-XXXXXXXX-X'
+google_analytics: 'UA-127754720-1'
 permalink: /:year/:month/:day/:title:output_ext
 plugins: [jekyll-paginate]
 
