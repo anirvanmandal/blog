@@ -12,7 +12,7 @@ Making such a script was in the back of my mind for quite some time now. The mai
 
 
 {% highlight python %}    
-    #Python 2.7
+    #Python 2.7.1
     #Author n!ghtf0x
     #email anirvan.mandal@gmail.com
     #Script for retreving Tv show information from TVrage.com
