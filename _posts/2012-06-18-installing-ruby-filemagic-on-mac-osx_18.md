@@ -11,7 +11,9 @@ blogger_orig_url: https://static-point.blogspot.com/2012/06/installing-ruby-file
 ---
 
 When you try to install ruby-filemagic gem into your rails application or your gems You'll get an error which will look something like this.
-{% highlight bash %}
+
+
+```bash
 Building native extensions.  This could take a while...
 ERROR:  Error installing ruby-filemagic:    
 ERROR: Failed to build gem native extension.
@@ -42,15 +44,16 @@ Could not create Makefile due to some reason, probably lack of necessary librari
     --without-magic-lib=${magic-dir}/lib
     --with-magiclib
     --without-magiclib
-{% endhighlight %}
+```
     
 
 This error basically implies that the libmagic gem is missing or that it's location is not found in the PATH variable.
 
 So the first thing that we need to is to install libmagic using homebrew
-{% highlight bash %}
+
+```bash
 brew install libmagic
-{% endhighlight %}
+```
        
 or macports
 
