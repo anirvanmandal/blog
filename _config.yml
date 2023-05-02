@@ -3,7 +3,7 @@ description: An engineer's misadventures
 meta_description: "Blogging about things I work on and find interesting"
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 logo: false
 paginate: 10
 baseurl: /

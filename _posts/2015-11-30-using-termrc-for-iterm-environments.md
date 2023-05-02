@@ -5,7 +5,6 @@ date: '2015-11-30T12:50:50.000Z'
 author: Anirvan Mandal
 categories: [iTerm]
 tags: iterm osx termrc
-
 ---
 
 I was looking for a way to automate my iTerm environment on a per project basis and I happened to stumble upon [termrc](https://github.com/briangonzalez/termrc). It's a really nifty ruby gem that uses a config file to start an iTerm environment.

@@ -37,11 +37,12 @@ LESS and Sass are the most widely used css preprocessors. LESS is written in jav
 
 LESS and Sass both facilitate using variables for storing commonly used values thus making it convenient for developers to change the styling of the application as and when needed.
 
+{% highlight css %}
     $height-var = 10px; //Sass
     
 
     @height-var = 10px; //LESS
-    
+{% endhighlight %}
 
 ####       Nesting
 
