@@ -13,40 +13,17 @@ post_class: post-template
 </header>
 
 <main class="content" role="main">
-
     <article class="post">
-
         <header class="post-header">
             <h1 class="post-title">{{ page.title }}</h1>
             <section class="post-meta">
                 <time class="post-date" datetime="{{ page.date | date:'%Y-%m-%d' }}">{{ page.date | date_to_string }}</time>
                 {% if page.categories.size > 0 %}
-                    {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
+                {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
                 {% endif %}
                 {{ site.author | prepend: 'by ' }}
             </section>
-
         </header>
-
-<!--         <header class="post-header">
-            <a id="blog-logo" href="{{site.url}}">
-                {% if site.logo %}
-                    <img src="{{site.logo}}" alt="{{ site.name }}" />
-                {% else %}
-                    <span class="blog-title">{{ site.name }}</span>
-                {%endif%}
-            </a>
-        </header> -->
-
-        <!-- <span class="post-meta">
-            <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-            {% if page.categories.size > 0 %}
-                {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
-            {% endif %}
-        </span> -->
-
-        <!-- <h1 class="post-title">{{ page.title }}</h1> -->
-
         <section class="post-content">
             {{content}}
         </section>
@@ -56,7 +33,7 @@ post_class: post-template
             <h5>Archive</h5>
             <ul>
                 {% for post in site.posts %}
-                    <li><span>{{ post.date | date_to_string }}</span>  <a href="{{ post.url }}">{{ post.title }}</a></li>
+                <li><span>{{ post.date | date_to_string }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
                 {% endfor %}
             </ul>
         </section>
@@ -64,17 +41,14 @@ post_class: post-template
 
         <footer class="post-footer">
             <section class=post-meta>
-            {% if page.tags.size > 0 %}
-                {{ page | tags | prepend: ' Tags: ' }}    
-            {% endif %}
+                {% if page.tags.size > 0 %}
+                {{ page | tags | prepend: ' Tags: ' }}
+                {% endif %}
             </section>
             <!-- Disqus comments -->
             {% if page.disqus %}
-                {% include disqus.html %}
+            {% include disqus.html %}
             {% endif %}
-
         </footer>
-
     </article>
-
 </main>
