@@ -1,6 +1,7 @@
 name: Anirvan's blog
 description: An engineer's misadventures
-meta_description: "Blogging about things I work on and find interesting"
+meta_description: "A code blog written by Anirvan Mandal about things he finds while working"
+title: Anirvan Mandal's Blog
 
 markdown: kramdown
 highlighter: rouge
