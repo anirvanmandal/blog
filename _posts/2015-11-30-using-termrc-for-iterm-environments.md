@@ -12,7 +12,7 @@ I was looking for a way to automate my iTerm environment on a per project basis 
 I split my iTerm window into 4 panes when working on a rails project. 1 server, 1 console, 1 resque worker and 1 console for bash commands.
 This can be programmatically accomplished by using a simple configuration in a Termfile (YAML). 
 
-{% highlight bash %}
+```yaml
 # /your/project/root/Termfile
 
 root:
@@ -27,18 +27,19 @@ commands:
 layout:
   - [ server , console ]
   - [ worker , bash ]
-{% endhighlight %}
+```
 
 You can initialize your work environment using:
-{% highlight bash %}
+```shell
 termrc start /your/project/root/Termfile
-{% endhighlight %}
+```
 
 Additionally I added a shell script to perform tasks before starting the iTerm work environment
 
-{% highlight bash %}
+```shell
 #! /usr/bin/env bash
-ROOT=/your/project/root
+
+ROOT="/your/project/root"
 cd $ROOT && G_STATUS="$(git status | grep clean)"
 EXPECTED_G_STATUS='nothing to commit, working directory clean'
 if [ "$G_STATUS"=="$EXPECTED_G_STATUS" ]
@@ -52,4 +53,4 @@ then
 fi
 
 termrc start ~/Termfile
-{% endhighlight %}
+```

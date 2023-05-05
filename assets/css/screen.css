@@ -576,7 +576,7 @@ margin on the iframe, cause it breaks stuff. */
     height: 38px;
     padding: 0 15px 0 10px;
     border: transparent 1px solid;
-    color: #9EABB3;
+    color: rgba(0, 0, 0, 0.6);
     text-align: center;
     font-size: 12px;
     text-transform: uppercase;
@@ -602,7 +602,7 @@ margin on the iframe, cause it breaks stuff. */
     height: 38px;
     padding: 0 20px;
     border: transparent 1px solid;
-    color: #9EABB3;
+    color: rgba(0, 0, 0, 0.6);
     text-align: center;
     font-size: 12px;
     text-transform: uppercase;
@@ -611,7 +611,9 @@ margin on the iframe, cause it breaks stuff. */
     border-radius: 3px;
     background: rgba(0,0,0,0.1);
     transition: all ease 0.3s;
+    z-index: 10;
 }
+
 .subscribe-button:before {
     font-size: 9px;
     margin-right: 6px;
@@ -629,6 +631,7 @@ margin on the iframe, cause it breaks stuff. */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0)));
     background: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
     background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
+    z-index: 10;
 }
 .no-cover .main-nav.overlay,
 .no-cover .back-button,
@@ -642,7 +645,7 @@ margin on the iframe, cause it breaks stuff. */
 
 .main-nav.overlay .back-button,
 .main-nav.overlay .subscribe-button {
-    border-color: rgba(255,255,255,0.6);
+    border-color: rgba(0, 0, 0, 0.6);
 }
 
 .main-nav.overlay a:hover {
@@ -690,7 +693,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .no-cover .page-description {
-    color: rgba(0,0,0,0.5);
+    color: rgba(0,0,0,0.6);
 }
 
 .no-cover .main-nav.overlay .back-button,
@@ -732,7 +735,7 @@ margin on the iframe, cause it breaks stuff. */
 
 .tag-cloud a {
     text-decoration: none;
-    color: #9EABB3;
+    color: rgba(0, 0, 0, 0.6);
 }
 
 .tag-cloud a:hover {
@@ -794,7 +797,7 @@ body:not(.post-template) .post-title {
     font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
-    color: #9EABB3;
+    color: rgba(0, 0, 0 ,0.6);
     font-weight: 400;
 }
 
@@ -807,7 +810,7 @@ body:not(.post-template) .post-title {
 }
 
 .post-meta a {
-    color: #9EABB3;
+    color: rgba(0, 0, 0, 0.6);
     text-decoration: none;
 }
 
@@ -1238,12 +1241,12 @@ body:not(.post-template) .post-title {
     margin: 4rem auto;
     font-family: "Open Sans", sans-serif;
     font-size: 1.3rem;
-    color: #9EABB3;
+    color: rgba(0, 0, 0, 0.6);
     text-align: center;
 }
 
 .pagination a {
-    color: #9EABB3;
+    color: rgba(0,0,0,0.6);
     transition: all 0.2s ease;
 }
 
@@ -1518,13 +1521,13 @@ body:not(.post-template) .post-title {
         height: 44px;
         line-height: 41px;
         border-radius: 0;
-        color: #2e2e2e;
+        color: rgba(0, 0, 0, 0.6);
         background: transparent;
     }
     .back-button:hover,
     .subscribe-button:hover {
         border-color: #ebeef0;
-        color: #2e2e2e;
+        color: rgba(0, 0, 0, 0.6);
         background: #ebeef0;
     }
 
