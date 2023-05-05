@@ -13,6 +13,7 @@ tags: ghost nginx capistrano
 * I have mounted my EBS at /mnt/data and I am using /mnt/data/blog/current as the root directory for the ghost application.
 * Install nginx
 
+
 {% highlight bash %}
 sudo apt-get install nginx
 {% endhighlight %}

@@ -3,6 +3,7 @@ layout: post
 title: "[Python] Script - Airing time and Date for a list of TV Shows"
 date: '2011-09-12T05:31:00.001+05:30'
 author: Anirvan Mandal
+categories: [Python]
 tags:
 - python
 modified_time: '2011-10-23T17:32:35.465+05:30'

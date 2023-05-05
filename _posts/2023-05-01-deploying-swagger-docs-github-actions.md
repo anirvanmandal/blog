@@ -4,7 +4,7 @@ title: Deploying Swagger Docs using github actions
 description: A blog post on how to deploy swagger docs to Github pages via Github actions
 date: '2023-05-01T00:00:00.000Z'
 author: Anirvan Mandal
-categories: [Github Actions]
+categories: [Swagger, Github Actions, Ruby on Rails]
 tags: ruby rails swagger rswag github
 
 ---

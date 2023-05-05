@@ -3,6 +3,7 @@ layout: post
 title: "[Python] Delete Current Playing Song from iTunes Library and HDD"
 date: '2011-10-24T17:21:00.000+05:30'
 author: Anirvan Mandal
+categories: [Python, Windows 7]
 tags:
 - python
 - windows-7

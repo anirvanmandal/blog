@@ -1,11 +1,11 @@
 ---
 layout: post
-title: MKV files locked by windows explorer.
+title: MKV files locked by windows explorer
 date: '2011-08-07T10:34:00.000+05:30'
 author: Anirvan Mandal
 tags:
 - windows-7
-categories: windows
+categories: [windows 7]
 modified_time: '2011-08-07T10:34:25.391+05:30'
 ---
 
