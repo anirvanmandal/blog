@@ -104,4 +104,6 @@ Making such a script was in the back of my mind for quite some time now. The mai
 
 The following code requires you to have [python-tvrage-api 0.3.0](http://pypi.python.org/pypi/python-tvrage/0.3.0) and [pytz](http://pytz.sourceforge.net/) packages to be installed with your python.
 
-[![](http://3.bp.blogspot.com/-SynClBVYiWo/Tm1S7jk03uI/AAAAAAAAABU/mB1CG6UQPdw/s640/op.jpg)](http://3.bp.blogspot.com/-SynClBVYiWo/Tm1S7jk03uI/AAAAAAAAABU/mB1CG6UQPdw/s1600/op.jpg)Output Produced by the scriptFor now I have used a tv rage api that provides output int he form of lists. TV rage provides it's own api for getting xml from rss scripts. 
+[![](/assets/images/tv-ratings-output.jpg)](/assets/images/tv-ratings-output.jpg)
+
+Output Produced by the scriptFor now I have used a tv rage api that provides output int he form of lists. TV rage provides it's own api for getting xml from rss scripts. 
