@@ -176,16 +176,11 @@ html {
 }
 
 body {
-    height: 100%;
-    max-height: 100%;
     font-family: "Merriweather", serif;
     letter-spacing: 0.01rem;
     font-size: 1.8rem;
     line-height: 1.75em;
     color: #3A4145;
-    -webkit-font-feature-settings: 'kern' 1;
-    -moz-font-feature-settings: 'kern' 1;
-    -o-font-feature-settings: 'kern' 1;
 }
 
 ::-moz-selection {
@@ -430,6 +425,12 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0;
 }
 
+main {
+    max-width: 1440px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
 
 /* ==========================================================================
    3. Utilities - These things get used a lot
@@ -472,15 +473,53 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Big cover image on the home page */
 .main-header {
-    position: relative;
-    display: table;
+    background-color: #fff;
     width: 100%;
-    height: 100%;
-    margin-bottom: 5rem;
-    text-align: center;
-    background: #222 no-repeat center center;
-    background-size: cover;
-    overflow: hidden;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.posts-wrapper {
+    margin-bottom: 6rem;
+
+    .post-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
+
+    .post-title {
+        font-size: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 0rem;
+    }
+
+    .post-date {
+        border-left: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+}
+
+.blog-index-header {
+    margin-bottom: 4rem;
+
+    .page-title {
+        color: #000;
+    }
+
+    .page-description { 
+        color: #000;
+    }
+}
+
+.year-title {
+    margin-bottom: 4rem;
 }
 
 .main-header .inner {
@@ -488,9 +527,13 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .main-nav {
-    position: relative;
-    padding: 35px 40px;
-    margin: 0 0 30px 0;
+    border-bottom: 1px solid #EFEFEF;
+    padding: 10px 2rem;
+    margin: 0 auto;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .main-nav a {
@@ -527,24 +570,6 @@ margin on the iframe, cause it breaks stuff. */
 
 .home-template {
     min-height: 100vh;
-}
-
-/* Put a semi-opaque radial gradient behind the icon to make it more visible
-   on photos which happen to have a light background. */
-.home-template .main-header:after {
-    display: block;
-    content: " ";
-    width: 150px;
-    height: 130px;
-    border-radius: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -75px;
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.15)), color-stop(70%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%);
-    background: radial-gradient(ellipse at center,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%);
 }
 
 /* Hide when there's no cover image or on page2+ */
@@ -603,7 +628,6 @@ margin on the iframe, cause it breaks stuff. */
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: inline-block;
-    float: right;
     height: 38px;
     padding: 0 20px;
     border: transparent 1px solid;
@@ -706,20 +730,6 @@ margin on the iframe, cause it breaks stuff. */
     border-color: rgba(0,0,0,0.8);
 }
 
-/* Add subtle load-in animation for content on the home page */
-.home-template .page-title {
-    -webkit-animation: fade-in-down 0.6s;
-    animation: fade-in-down 0.6s;
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-}
-.home-template .page-description {
-    -webkit-animation: fade-in-down 0.9s;
-    animation: fade-in-down 0.9s;
-    -webkit-animation-delay: 0.1s;
-    animation-delay: 0.1s;
-}
-
 .tag-title {
     position: relative;
     width: 80%;
@@ -779,10 +789,6 @@ margin on the iframe, cause it breaks stuff. */
     -moz-border-radius: 100%;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
-}
-
-body:not(.post-template) .post-title {
-    font-size: 3.6rem;
 }
 
 .post-title a {
