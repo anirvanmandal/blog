@@ -3,3 +3,9 @@
 ## Coding blog written in jekyll
 
 * Ruby version: 3
+
+## Development
+
+```sh
+bundle exec jekyll serve
+```

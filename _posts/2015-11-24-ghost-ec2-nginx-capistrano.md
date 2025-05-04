@@ -13,25 +13,24 @@ tags: ghost nginx capistrano
 * I have mounted my EBS at /mnt/data and I am using /mnt/data/blog/current as the root directory for the ghost application.
 * Install nginx
 
-
-{% highlight bash %}
+```bash
 sudo apt-get install nginx
-{% endhighlight %}
+```
 
 * Create cache directories
 
-{% highlight bash %}
+```bash
 sudo mkdir /var/cache/nginx
 sudo chown www-data:www-data /var/cache/nginx
-{% endhighlight %}
+```
 
 * Here's my nginx config. It's pretty barebones just to make stuff work. You can copy it as it is or make more advanced changes to it.
 
-{% highlight bash %}
+```sh
 sudo vim /etc/nginx/nginx.conf
-{% endhighlight %}
+```
 
-{% highlight nginx %}
+```bash
 user www-data;
 worker_processes 4;
 pid /run/nginx.pid;
@@ -92,14 +91,14 @@ http {
 	include /etc/nginx/conf.d/*.conf;
         include /etc/nginx/sites-enabled/*;
 }
-{% endhighlight %}
+```
 
 
 * Reload nginx
 
-{% highlight bash %}
+```bash
 sudo /etc/init.d/nginx restart
-{% endhighlight %}
+```
 
 * Install [node version manager](https://github.com/creationix/nvm) on the server and install node v0.10.42.
 
@@ -109,17 +108,17 @@ sudo /etc/init.d/nginx restart
 
 * Initiate a git repo
 
-{% highlight bash %}
+```bash
 git init
-{% endhighlight %}
+```
 
 Make sure your you ignore the files not required
 
-{% highlight bash %}
+```bash
 content/images/*
 content/data/*
 node_modules/
-{% endhighlight %}
+```
 
 * Add [capistrano](http://capistranorb.com/) to your project to help with deployments.
 
@@ -127,7 +126,7 @@ I am using ruby 2.1.5 using rvm in my local environment
 
 The Gemfile looks like this
 
-{% highlight ruby %}
+```ruby
 ruby '2.1.5'
 
 source 'https://rubygems.org'
@@ -135,19 +134,19 @@ source 'https://rubygems.org'
 gem 'bundler'
 gem 'capistrano'
 gem 'capistrano-npm'
-{% endhighlight %}
+```
 
 Initialize capistrano
 
-{% highlight bash %}
+```bash
 cap install
-{% endhighlight %}
+```
 
 Only the production environment was of relevance for me, so I deleted config/deploy/staging.rb
 
 The config/deploy/production.rb should looks like this
 
-{% highlight ruby %}
+```ruby
 server "YOUR SERVER IP", user: "ubuntu", roles: %{web}
 
 set :scm, :git
@@ -161,11 +160,11 @@ set :user, 'ubuntu'
 
 set :app_command, 'start.sh'
 set :process_name, 'node_server_code_blog'
-{% endhighlight %}
+```
 
 The config/deploy.rb looks like this
 
-{% highlight ruby %}
+```ruby
 set :keep_releases, 5
 
 namespace :deploy do
@@ -183,11 +182,11 @@ namespace :deploy do
   end
 
 end
-{% endhighlight %}
+```
 
 Add a file /lib/tasks/pm2.cap. This basically takes care of monitoring your node application.
 
-{% highlight ruby %}
+```ruby
 require 'json'
 
 namespace :pm2 do
@@ -236,32 +235,31 @@ namespace :pm2 do
   end
 
 end
-{% endhighlight %}
+```
 
 * Add capistrano-npm and pm2.cap to the Capfile
 
-{% highlight ruby %}
+```ruby
 ...
 require 'capistrano-npm'
 import 'lib/tasks/pm2.cap'
 ...
-{% endhighlight %}
+```
 
 Add a start.sh script to your project root
 
-{% highlight bash %}
+```bash
 #!/bin/bash
 cd /mnt/data/blog/current
 npm start --production
-{% endhighlight %}
+```
 
 * Make sure your latest changes are present in the master branch of your git repository
 
 * Deploy from your local environment
 
-{% highlight bash %}
+```bash
 cap production deploy
-{% endhighlight %}
+```
 
 * If there are no errors your ghost blog should be available at the public ip of your EC2 instance
-

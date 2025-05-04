@@ -6,6 +6,7 @@ title: Anirvan Mandal's Blog
 markdown: kramdown
 highlighter: rouge
 logo: false
+theme: rogue
 paginate: 10
 baseurl: /
 domain_name: 'https://blog.anirvanm.com'
